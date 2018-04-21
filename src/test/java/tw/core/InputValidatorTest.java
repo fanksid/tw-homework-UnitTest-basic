@@ -32,7 +32,7 @@ public class InputValidatorTest {
     }
 
     @Test
-    public void should_return_true_when_satisfy_all_constraint() {
+    public void should_return_true_when_numCount_equal_and_distinct_numCount_equal_and_num_less_than_10() {
         Assert.assertTrue(validator.validate("1 2 3 9"));
         Assert.assertTrue(validator.validate("4 2 3 1"));
         Assert.assertTrue(validator.validate("0 6 8 3"));

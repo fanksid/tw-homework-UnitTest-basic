@@ -1,5 +1,6 @@
 package tw.core.generator;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import tw.core.Answer;
@@ -22,7 +23,9 @@ public class AnswerGeneratorTest {
 
     @Test
     public void should_generate_and_return_answer() throws Exception{
-        generator.generate();
+        int[] value = generator.generate().check(Answer.createAnswer("1 2 3 4")).getValue();
+        Assert.assertEquals(4, value[0]);
+        Assert.assertEquals(0, value[1]);
     }
 }
 

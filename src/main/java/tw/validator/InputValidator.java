@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.lang.Integer.parseInt;
-
 /**
  * Created by jxzhong on 2017/5/18.
  */
@@ -19,7 +17,7 @@ public class InputValidator {
 
     private boolean validateSingleGigit(List<String> numList, int numCount) {
         return numList.stream()
-                .map(num -> parseInt(num))
+                .map(Integer::parseInt)
                 .distinct()
                 .filter(num -> num < 10).count() == numCount;
     }

@@ -18,12 +18,12 @@ import static org.mockito.Mockito.when;
 
 public class GameTest {
     private static final String FAIL = "fail";
-    public static final String CONTINUE = "continue";
-    AnswerGenerator mockAnswerGenerator;
-    Answer mockCorrectAnswer;
-    Game game;
-    Record mockRecord;
-    Answer mockInputAnswer;
+    private static final String CONTINUE = "continue";
+    private AnswerGenerator mockAnswerGenerator;
+    private Answer mockCorrectAnswer;
+    private Game game;
+    private Record mockRecord;
+    private Answer mockInputAnswer;
 
     @Before
     public void setUp() throws Exception {
@@ -41,7 +41,7 @@ public class GameTest {
     }
 
     @Test
-    public void guessTest() throws Exception{
+    public void should_return_result_of_2A1B_when_result_match_2_right_and_1_wrong() throws Exception{
         GuessResult guessResult = game.guess(mockInputAnswer);
         Assert.assertEquals("2A1B", guessResult.getResult());
         Assert.assertEquals(mockInputAnswer, guessResult.getInputAnswer());
@@ -57,7 +57,7 @@ public class GameTest {
     }
 
     @Test
-    public void should_return_true_when_guess_success_and_count_less_than_MAX_TIMES() {
+    public void should_return_success_when_guess_success_and_count_less_than_MAX_TIMES() {
         game.guess(mockInputAnswer);
         Assert.assertEquals(CONTINUE, game.checkStatus());
 
@@ -65,5 +65,10 @@ public class GameTest {
 
         game.guess(mockInputAnswer);
         Assert.assertEquals("success", game.checkStatus());
+    }
+
+    @Test
+    public void should_return_continue_when() {
+
     }
 }

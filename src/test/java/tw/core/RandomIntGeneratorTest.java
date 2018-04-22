@@ -24,7 +24,7 @@ public class RandomIntGeneratorTest {
     }
 
     @Test
-    public void generateNumsTest() {
+    public void should_return_required_numbers_when_call_generateNums_method() {
         int digitmax = 8;
         int numbersOfNeed = 5;
 

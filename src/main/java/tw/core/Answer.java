@@ -7,8 +7,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.lang.Integer.parseInt;
-
 /**
  * Created by jxzhong on 2017/5/16.
  */
@@ -29,7 +27,7 @@ public class Answer {
 
     public void validate() throws OutOfRangeAnswerException {
         long validatedNum = numList.stream()
-                .map(num -> parseInt(num))
+                .map(Integer::parseInt)
                 .distinct()
                 .filter(num -> num < 10).count();
         if (validatedNum < numList.size()) {
